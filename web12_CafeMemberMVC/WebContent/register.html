@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/html">
+	
+	</style>
+	<script type="text/javascript">
+		function passCheck() {
+			// 전송 버튼을 클릭했을 때 진행되는 이벤트를 기술...
+			// alert("passCheck calling..."); // 버튼과 이벤트가 잘 연결 되었는지 확인
+			/*
+			 * password와 repassword의 값이 일치하지 않으면 페이지 이동 안되고
+			 * 일치하지 않는다는 메시지를 alert로 띄워준다.
+			 */
+			var f = document.registerForm;
+			if (f.password.value != f.repassword.value) {
+				alert("비밀번호가 일치하지 않습니다");
+				f.repassword.value = "";
+				f.repassword.focus();
+				return false; // action으로 이동하지 않는다.
+			}
+		}
+		
+		function btnClick() {
+		
+		}
+	</script>
+</head>
+<body>
+	<form action="RMS" method="post" onsubmit="return passCheck()" name="registerForm">
+		<h1>Register Member Form</h1><br><br>
+		ID : <input type="text" name="id" required="required"><br>
+		PASSWORD : <input type="password" name="password" required="required"><br>
+		PASSWORD CONFIRM: <input type="password" name="repassword" required="required"><br>
+		NAME : <input type="text" name="name" required="required"><br>
+		ADDRESS : <input type="text" name="address" required="required"><br>
+		<input type="submit" value="Member Register"><!-- submit 버튼 클릭시 함수 호출되도록 이벤트 연결...JavaScript 사용 됨...onsubmit은 form 태그에 적용!! -->
+		<input type="button" value="CLICK" onclick="btnClick()"><!-- onclick이므로 여기에 쓴다. -->
+	</form>
+</body>
+</html>
