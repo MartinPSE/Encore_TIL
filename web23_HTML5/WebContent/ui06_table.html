@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	td{
+		text-align : center;
+		
+	}
+	
+	tfoot{
+		background-color : pink;
+	
+	}
+	
+	table tbody tr:hover{ 
+		
+		background-color : white;
+	
+	}
+	
+	/*
+		table 자식인 tr을 선택자로 지정
+		table tr : table의 후손 개념 tr
+		table>tr : table의 직계자식인 tr
+	*/
+	
+
+
+</style>
+
+
+
+
+
+</head>
+<body>
+
+<h2 align="center"> Table에 Hover 효과 주기 </h2>
+<table align="center" border="2" width="40%">
+
+	<caption> Table Caption</caption>
+	<colgroup>
+		<col span = "1" style="background:red">
+		<col span = "1" style="background:blue">
+		<col style="background : yellow">
+	</colgroup>
+	
+	<thead>
+		<tr>
+			<th> NO </th>
+			<th> NAME </th>
+			<th> ADDR </th>
+		
+		</tr>
+	
+	</thead>
+	<tbody>
+		<tr>
+			<td colspan="2">1</td>
+		</tr>
+		<tr>
+			<td>2</td><td>BBB</td><td>Texas</td>
+		</tr>
+		<tr>
+			<td>3</td><td>333</td><td>Brandon</td>
+		</tr>
+
+	</tbody>
+	<tfoot style="background : yellow">
+		<tr>
+			<td>4</td> <td> 바보 </td> <td> 끝</td>
+		</tr>
+	</tfoot>
+</table>
+
+</body>
+</html>
