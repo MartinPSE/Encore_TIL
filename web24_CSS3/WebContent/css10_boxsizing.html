@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- 
+	원래 boxsize 는 padding, margin, border ... 모든걸 다 계산해서
+	하지만 
+	box-sizing : border 로 하면, 절대적으로 width height 값으로만
+				 box의 크기를 준다.
+				 
+	box-sizing 의 default 는 content-box 다.
+	
+
+ -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#div1{
+	width : 200px;
+	height : 150px;
+	border : 2px solid cyan;
+}
+
+#div2{
+	width : 200px;
+	height : 150px;
+	border : 2px solid cyan;
+	padding : 50px;
+	box-sizing : border-box;
+}
+
+
+</style>
+
+
+</head>
+<body>
+
+<div id="div1"> This div is smaller ( width is 100% and height is 150px ) </div>
+<hr size = "10px" color = "green">
+
+<div id="div2"> This div is bigger </div>
+
+</body>
+</html>

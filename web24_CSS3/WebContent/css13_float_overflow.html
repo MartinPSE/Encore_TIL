@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	
+	#wrap {
+		border : 1px solid cyan;	
+		overflow : hidden;
+	}
+	
+	#a{
+		border : 1px solid red;
+		margin : 10px;	
+		float : left; 		
+	}
+		/* 자식 요소에서 float 속성 사용시 부모 요소 범위를 벗어나게 된다.
+			Solution
+				1. '부모' 요소 범위의 Size를 크게 잡아버린다.
+				2. overflow : hidden 으로 주자. --> 부모 요소에 지정하자!
+			
+		*/
+	
+	#b {
+		border : 1px solid green;
+		margin : 10px;
+		height : 30px;
+		float : left;
+	
+	}
+	
+
+
+
+</style>
+
+
+
+</head>
+<body>
+<div id="wrap">
+	<div id="a">
+		Encore	
+	</div>
+</div>
+
+	<div id="b">
+		Play
+	</div>
+	
+	
+
+</body>
+</html>
