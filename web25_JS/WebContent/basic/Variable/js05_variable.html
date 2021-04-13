@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var myName ="Martin"; // 전역변수 
+	name = "James";
+		
+	console.log(myName); // Martin
+	console.log(name); // James
+	
+	function showAge() {
+		// var age = 90; // 지역변수
+		// let age = 100; // 지역(local) 변수로 설정하기 ... let, const...
+		
+		age = 90; // 자동으로 전역변수로 처리된다.
+		
+		
+	}
+	
+	showAge();
+	
+	console.log(age); // 90
+</script>
+</head>
+<body>
+
+</body>
+</html>

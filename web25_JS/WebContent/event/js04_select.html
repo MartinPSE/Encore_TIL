@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function itemChange() {
+	// alert("item Change!!");
+	
+	var subway = document.getElementById("sline");
+	if (subway.value != null) { // 즉 뭐라도 선택이 됐다면 
+		alert(subway.value+" 호선 선택.");
+				
+	}
+	
+	
+}
+
+
+</script>
+
+</head>
+<!-- 
+	Onchange 사용해야한다. select form에서 느낌알지?
+ -->
+<body>
+	<form name="frm" id="frm">
+		<select id="sline" onchange="itemChange()">
+			<option value="1호선"> ----- 1호선 ----- </option>
+			<option value="2호선"> ----- 2호선 ----- </option>
+			<option value="3호선"> ----- 3호선 ----- </option>
+			<option value="4호선"> ----- 4호선 ----- </option>
+		
+		</select>
+	
+	
+	
+	</form>
+
+</body>
+</html>

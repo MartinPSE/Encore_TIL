@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	var list = ''; // Datatype이 동적으로 할당.
+	// 복합연산자 사용
+	list += '<ul>';
+	list += '<li>Hello</li>';
+	list += '<li>JavaScript</li>';
+	list += '</ul>';
+	
+	// list 변수 안에 있는 축적된 모든 내용을 웹 브라우저에 출력
+	// 이때 document.어느영역.innerHTML =list;
+	
+	
+	document.getElementById("wrap").innerHTML = list;
+	
+});
+
+$(document).ready(function(){
+	alert("AAA");
+	
+});
+
+/*
+ 
+ 	JQuery :
+ 		자바스크립트 라이브러리.
+ 	
+  
+	 JQuery의 ready 함수이다.
+	 
+	 JavaScript를 못 읽는 error를 해결
+ 
+ 
+ */
+
+	
+
+
+	
+	
+	
+
+</script>
+
+
+
+</head>
+<body>
+
+<h1> ===== onLoad =====</h1>
+<div id="wrap">
+
+
+</div>
+</body>
+
+
+
+</html>

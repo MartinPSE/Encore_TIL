@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function choiceAngel() {
+	
+	var arr = document.frm.angel;
+	// alert(arr.length);
+	
+	/*
+	하나라도 선택하지 않았으면, 한명의 이상형을 선택하라는 alert 띄우기
+	하나이상 선택했으면, 선택한 이상형을 alert창으로 출력	
+	
+	*/
+	var str= "";
+	for (var i = 0; i<arr.length ; i++){
+		if (arr[i].checked){ // 선택한 데이터
+			str += arr[i].value; // *value 까먹으면 안된다!
+			
+			}
+			arr[i].checked = false;
+		}
+	
+	if (str== ""){
+		alert("하나의 천사라도 골라주십쇼!");
+		
+	}else alert("당신의 이상형은 "+str+"입니다!");
+	
+	
+	
+}
+
+
+</script>
+
+</head>
+<body>
+<form name="frm">
+	<input type="checkbox" name="angel" value="아이유">아이유<br>
+	<input type="checkbox" name="angel" value="한소희">한소희<br>
+	<input type="checkbox" name="angel" value="김민경">김민경<br>
+	<input type="checkbox" name="angel" value="박세리">박세리<br>
+	<input type="checkbox" name="angel" value="김소연">김소연<br>
+	<input type="checkbox" name="angel" value="아이린">아이린<br>
+	<input type="button" value="choice" onclick="choiceAngel()">
+	
+	
+</form>
+</body>
+</html>

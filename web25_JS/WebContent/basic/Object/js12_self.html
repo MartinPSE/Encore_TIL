@@ -1,0 +1,78 @@
+<!-- 
+앞의 js11.html 참조하여서 작성
+
+해보기
+
+Student 생성자 함수를 선언
+인자값 - name, java성적, python성적, html 성적 :: 속성정의 부분
+
+함수1 (점수의 총합) : total
+함수2 (점수의 평균) : avg
+함수3 (정보를 출력) : record
+
+
+
+이름 		  자바		  파이썬	html 	총점		 평균
+-
+-
+-
+
+ 
+ -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	function Student (name, java, python, html){
+		this.name = name;
+		this.java = java;
+		this.python = python;
+		this.html = html;
+		
+		this.total = function (){
+			return this.java + this.python + this.html;
+			
+		}
+		
+		this.avg = function () {
+			
+			var total = this.total();
+			
+			return total / 3;
+			
+		}
+		
+		this.record =  function(){
+			
+			document.write('<table border=1><tr><th>이름</th> <th>자바</th>  <th>파이썬</th>  <th>html</th>  <th>총점 </th> <th>평균</th>  </h1></tr>');
+			document.write('<td><h2>'+this.name +' </td><td>' + this.java +' </td><td>' +this.python + ' </td><td>' + this.html + '</td><td>' +this.total() +'</td><td> '+ this.avg()+'</h2></td></table>');
+		  //document.write(`<td><h2>${this.name}</td><td>${this.java}</td><td>${this.python}</td><td>${this.html}</td><td>${this.total()}</td><td>${this.avg()}</h2></td></table>`);
+				
+			
+		}
+		
+		
+	}
+	
+	var student1 = new Student("오형석", 100, 100 , 100);
+	student1.record();
+	
+	var student2 = new Student("한소희", 90, 90 , 90);
+	student2.record();
+	
+	var  student3 = new Student("이주빈", 70 , 80 , 90);
+	student3.record();
+
+
+
+</script>
+
+
+</body>
+</html>

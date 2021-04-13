@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Constructor </title>
+</head>
+<body>
+<h2>
+
+
+</h2>
+
+<script type="text/javascript">
+	function Product (pname, price, cnt) { // 생성자 함수는 함수와 구분하기 위해서 '대문자'로 시작해주는 것이 좋다.
+		// this. 속성
+		this.pname = pname; // 생성자 초기화
+		this.price = price;
+		this.cnt = cnt;
+		
+		// this 메소드
+		this.buy = function () {
+			// 메소드가 하는일을 정의 ... 브라우저에 정보를 출력
+			document.write('<h2> 구매한 상품 정보 보기 </h2>');
+			document.write('<h3>  물건명 : '+ this.pname +'</h3>');
+			document.write('<h3>  가격 :'+this.price + '</h3>');
+			document.write('<h3>  개수 :'+this.cnt +' </h3>');
+			document.write('<h3>  총합 : '+( this.cnt * this.price) +' </h3>');
+			
+		}
+		
+		
+		
+	};
+	
+	var p1 = new Product('ASUS Notebook',100000,3);
+	var p2 = new Product('교촌치킨',16000,5);
+	var p3 = new Product('졸음껌', 3500,8);
+	
+	p1.buy();
+	document.write('<h3>===================================================</h3>');
+	
+	p2.buy();
+	document.write('<h3>===================================================</h3>');
+
+	p3.buy();
+	document.write('<h3>===================================================</h3>');
+	
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function checkAge() {
+		var age = document.ageFrm.age;
+		if (age.value ==""){
+			alert("값을 입력해주세요!!");
+		}
+		
+		else if ( age.value >= 19){
+			alert("성인이시네요? 입장가능하십니다.");
+		}else if(isNaN(age.value)){
+			alert("나이는 반드시 숫자로 입력해주셔야 합니다.");			
+		}
+		else{
+			alert("죄송합니다. This move is Rated R.");
+		}
+		
+		age.value='';
+		age.focus();
+		
+		
+	}
+
+
+
+</script>
+
+
+</head>
+<body>
+	<form name = "ageFrm">
+		나이 <input type="text" name="age">
+			<input type="button" value="나이확인" onclick="checkAge()">
+	
+	</form>
+</body>
+</html>
