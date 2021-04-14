@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> bind() :: 하나 혹은 여러개의 이벤트를  묶어주는 기능, 
+</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!--  JQuery CDN -->
+<script type="text/javascript">
+    $(function() {
+    	
+    	// * 자주쓰는 click함수 * 
+    	
+    	// click 이벤트를 연결... h2 태그 영역을 클릭하면 함수 호출되도록 선택자와 함수를 연결
+    	// $('h2').bind('click',function() {
+    	$('h2').click(function() {
+    		// .html == innerHTML 과 동일하다.
+    		
+    		// $(this).html(' ★');
+    		
+    		/* $(this).html(function(index,html){
+    			return html+ ' ★';
+    			
+    			 --> append를 쓰면 안되나?
+    		}); */
+    		
+    			$('h2').html(function(index, html) {
+					switch(index){
+					case 0: return html + " ★";
+					case 1: return html + " ☆";
+					case 2: return html + " ○";
+					
+					
+					}
+				});
+    				
+    	
+    	}); // bind
+    	
+    	
+    	
+
+	}); // ready
+
+</script>
+<style type="text/css">
+
+
+</style>
+</head>
+<body>
+	<h2>jQuery is a fast, small, and feature-rich JavaScript library </h2>
+	<h2>jQuery is a fast, small, and feature-rich JavaScript library </h2>
+	<h2>jQuery is a fast, small, and feature-rich JavaScript library </h2>
+	
+</body>
+</html>

@@ -20,9 +20,18 @@ public class HandlerMapping {
 		
 		if (command.equals("find.do")) {
 			controller = new FindController();
-		} else if (command.equals("register.do")) { // 없지만 예를 들어...
-			
-		} // else if ...
+		} else if (command.equals("login.do")) { 
+			controller = new LoginController();			
+		} else if (command.equals("logout.do")) {
+			controller = new LogoutController();			
+		} else if (command.equals("register.do")) {
+			controller = new RegisterController();
+		}else if (command.equals("update.do")) {
+			controller = new UpdateController();
+		}else if (command.equals("allmember.do")) {
+			controller = new AllMemberController();
+		}
+		
 		
 		return controller;
 	}

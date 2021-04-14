@@ -8,26 +8,34 @@ import javax.servlet.http.HttpServletResponse;
 import servlet.model.MemberDAOImpl;
 import servlet.model.MemberVO;
 
-public class FindController implements Controller { // 작명 : command가 find라서 FindController
+public class LoginController implements Controller{
 
 	@Override
 	public ModelAndView execute(HttpServletRequest request, HttpServletResponse response) {
 		
+		String path = "";
+		
 		String id = request.getParameter("id");
-		String path = "find_fail.jsp"; // 보수적으로 안 된 경우를 초기화
+		String password = request.getParameter("password");
 		
 		try {
-			MemberVO rvo = MemberDAOImpl.getInstance().findByIdMember(id);
-			
-			if (rvo != null) {
+			MemberVO rvo = MemberDAOImpl.getInstance().login(id, password);
+			if ( rvo != null ) {
 				request.setAttribute("vo", rvo);
-				path = "find_ok.jsp";
+				path = "login_result.jsp";
+				
+			}else {
+				path = "loginError.jsp";
 			}
-		} catch(SQLException e) {
+			
+		}catch(SQLException e) {
 			
 		}
+	
 		
-		return new ModelAndView(path); // redirect로 주려면 true로 바꿔줘야해
+		
+		return new ModelAndView(path);
 	}
 	
+
 }

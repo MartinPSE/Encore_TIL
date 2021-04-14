@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!--  JQuery CDN -->
+<script type="text/javascript">
+    $(function() {
+    	$('img').addClass('star');
+    	
+    	// 1. append 함수를 이용해서 3초뒤에 맨 첫번째 이미지가 맨 뒤로 가도록
+    	/* setTimeout(()=>{ 이렇게 써도됨
+    		
+    		})
+    		setTimeout은 특정한 시간 뒤에 단 한번만 호출 된다.
+    		
+    	*/
+    		
+    	/* setTimeout(function(){
+    		$('body').append($('img:first'));
+    		
+    		
+    	}, 3000); */
+    	
+    	// 2. 특정한 시간 간격으로 계속 호출되는 함수는 setInterval()
+    	setInterval(()=>{
+    		
+    		// $('body').append($('img:first'));
+    		
+    		
+    		// appendto 는 content(내용)에 tag를 부착
+    		// 1. appendTo를 사용 appendTo(태그이름)
+    		$('img:first').appendTo('body');
+    		
+    	}, 1000);
+    	
+    	
+
+	}); // ready
+
+</script>
+<style type="text/css">
+	.star{ border : 2px solid #000000; 
+			width : 200px; height:240px;}
+
+</style>
+</head>
+<body>
+	<img alt ="" src="../img/1.jpg">
+	<img alt ="" src="../img/2.jpg">
+	<img alt ="" src="../img/3.jpg">
+	<img alt ="" src="../img/4.jpg">
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Show Count</title>
+<script type="text/javascript">
+	// XMLHttpRequest ---> 속성과 메소드를 이용해서 '비동기'의 모든 것을 사용.
+	
+	var xhr;
+
+	function startRequest() {
+		// 1. XMLHttpRequest 객체를 생성
+		xhr = new XMLHttpRequest();
+		// alert(xhr);
+		
+		// 2. 'onreadystatechange' Method에 응답받을 함수를 지정! 
+		xhr.onreadystatechange = callback;
+		
+		// 3.  'open("겟방식?post방식?", "어디로?", "true= 비동기" | "false = 동기")
+		// 			' 서버상의 어떤 페이지로 요청이 들어갈지를 지정! (DEFAULT = true)
+		xhr.open("get","CountServlet?id=encore&&pass=playdata",true);
+		
+		// 4. Server로 요청이 전송
+		// get방식일때는 null값을 지정해줘야해
+		xhr.send(null);
+		
+	} // 요청이 진행되는 부분
+	
+	function callback() {
+		/*
+		  	성공한 경우만 응답을 받아서 출력 하자.
+			응답을 받았다 --> servlet에서 보낸
+		*/
+		if(xhr.readyState == 4 ){ // 
+			if(xhr.status == 200 ){
+				/*  200 - 성공 
+					* 클라이언트의 요청시 발생하는 문제
+					403 - 접근이 막혀져있을때
+					404 - FileNotFound 
+					405 - get방식인데 post로, post방식인데 get으로
+					* 서버측 문제
+					500-Logic Error
+				    
+				*/
+				var text = xhr.responseText;
+				document.getElementById("resultView").innerHTML =
+					"<h3><font color = '#14D3FF'" + text +"</font></h3>";
+				
+			}
+			
+		}
+		
+				
+		
+	} // 응답이 진행되는 부분
+</script>
+</head>
+<body>
+	<h2> Count </h2>
+	<input type="button" value="Count 증가" onclick="startRequest()">
+	<p>
+	<span id = "resultView"></span>
+	</p>
+	
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> click event prevent !! </title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!--  JQuery CDN -->
+<script type="text/javascript">
+    $(function() {
+    	
+    	// 첫번째 h2 태그를 클릭하면 함수 
+    /* 	$('h2:first').click(function(){
+    		// 클릭한 부분  'CLICK'으로 바뀌도록 .. RED
+    		$(this).html("<font color=RED> CLICK </font> ");
+    		alert('click () Calling ... ');
+    		
+    		// Click 이벤트가 더 이상 작용되지 않도록 한다.ㅣ
+    		$(this).unbind(); */
+    		
+    		
+   		$('h2:first').bind('click',function(){
+       		// 클릭한 부분  'CLICK'으로 바뀌도록 .. RED
+       		$(this).html("<font color=RED> CLICK </font> ");
+       		alert('click () Calling ... ');
+       		
+       		// Click 이벤트가 더 이상 작용되지 않도록 한다.ㅣ
+       		$(this).unbind();
+    		
+    		
+    	}); // click
+
+	}); // ready
+
+</script>
+<style type="text/css">
+
+
+</style>
+</head>
+<body>
+	<h2>jQuery is a fast, small, and feature-rich JavaScript library </h2>
+	<h2>jQuery is a fast, small, and feature-rich JavaScript library </h2>
+	<h2>jQuery is a fast, small, and feature-rich JavaScript library </h2>
+</body>
+</html>

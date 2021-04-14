@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!--  JQuery CDN -->
+<script type="text/javascript">
+    $(function() {
+    	// 각각의 이미지에 마우스를 가져다 대면 현재 크기보다 2배로 더 커지고
+    	// 이미지에서 마우스가 벗어나면 원래의 크길 돌아오도록 hover() 함수를 사용!
+    	
+    	
+		$('img').hover(function(){
+			$(this).addClass('bigger');
+			
+			
+		}, function(){
+			$(this).removeClass('bigger');
+			
+		});
+		
+	}); // ready
+
+</script>
+<style type="text/css">
+
+.bigger {
+	width : 50%;
+	height : 50%;
+}
+
+
+</style>
+</head>
+<body>
+	<h2> Bigger Image ...</h2>
+	<img src="../img/4.jpg" width = "100px"><br/>
+	<img src="../img/4.jpg" width = "100px"><br/>
+	<img src="../img/4.jpg" width = "100px"><br/>
+	
+
+</body>
+</html>
