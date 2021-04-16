@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!--  JQuery CDN -->
+<script type="text/javascript">
+    $(function() {
+    	// 1. javaScript 에선 onKeyup ... jQeury는 keyup()
+    	$('textarea').keyup(function() {
+    		
+    		var inputLength = $(this).val().length;
+    		// alert(inputLength);
+    	
+    	// 2. h1 태그 영역에 60/70 .. 출력되도록 html() 사용
+    		var remain = 70 - inputLength;
+    		$('div h1').html('남은 글자수 : '+ remain+' / 70');
+    	
+    	// 3. remain에 따라서 h1 부분의 색깔이 달라지도록
+    	// class 는 중복이 안되기때문에, class를 사용하려면 remove까지 해줘야해
+    	
+    		if(remain <= 0 ){
+    			alert("더 이상 입력하실 수 없습니다.")
+    		}else if ( remain <= 10){
+    			$('div h1').css('color','red');
+    			
+    		}else if (remain <= 20 ){
+    			$('div h1').css('color','orange');
+    		}else if (remain <= 40 ) {
+    			$('div h1').css('color','blue');
+    		}
+    		
+    		
+    	}); // keyup
+    	
+    		
+    	
+
+	}); // ready
+
+</script>
+<style type="text/css">
+	
+
+</style>
+</head>
+<body>
+	<div>
+		<p><b> 방명록 입니다. 70자 이내로 짧은 소견 부탁드립니다. </b></p>
+		<h1> 남은 글자수 : 70 / 70</h1>
+		<textarea rows="5" cols="70" maxlength='70'> </textarea>
+	
+	</div>
+</body>
+</html>
