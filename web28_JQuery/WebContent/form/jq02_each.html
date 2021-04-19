@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!--  JQuery CDN -->
+<script type="text/javascript">
+    $(function() {
+    	
+    	$('#eachBtn').click(function(){
+    		var arr =[];
+    		arr.push('아이유');
+    		arr.push('이승우');
+    		arr.push('이무진');
+    		arr.push('한소희');
+		
+    		// alert(arr.length);
+    		var str = "";
+    		/* for ( var i=0; i<arr.length ; i++){
+    			str += arr[i] +" ";
+    		};
+    			alert(str); */
+    	
+    	// each() 함수 사용 :: 동일한 태그가 여러개 있을때 태그의 갯수만큼 each() 호출된다.
+    	// 				   배열 안에 있는 data의 갯수만큼 each()가 호출된다.
+    	
+    	// #1 
+/*     	$(arr).each(function(index){
+    		str += arr[index]+" ";
+   			 alert(str);
+    		
+    		}); // each
+    		
+ */    	// #2
+ 		/* $.each(arr, function(index){
+ 			str += index+1+"."+arr[index] + " ";
+ 			
+ 			}); // each 
+    		alert(str); */
+    		
+    	// #3 	
+    		$.each(arr, function(index, item){
+     			// str += index+1+"."+arr[index] + " ";
+     			str += item +" ";
+     			}); // each 
+        		alert(str);
+    		
+    	}); // click
+
+	}); // ready
+
+</script>
+<style type="text/css">
+
+
+</style>
+</head>
+<body>
+	<input type="button" value="배열에 each() 적용하기" id="eachBtn">
+	
+</body>
+</html>

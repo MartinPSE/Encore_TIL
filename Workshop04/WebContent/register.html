@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Register </title>
+
+<style>
+/* 특정 영역에 스타일 적용. 선택자를 지정한다. */
+#wrap{ text-align:center;
+		width : 600px;
+		height : 250px;
+		border : 1px gray;
+		margin : 0 auto;
+		
+}
+img { float : left ; 
+	  width: 200px;
+	  height : 200px;
+}
+
+
+
+</style>
+
+</head>
+<body>
+
+<div id="wrap" >
+
+	<img src="img/image.png">
+	
+	<form action="MainServlet" method="post">
+		<h3> 로그인하여주세요 </h3>
+		<p>ID <input type="text" name="id"></p>
+		<p>PASSWORD <input type="password" name="password"></p>
+		<p>NAME <input type="text" name="name"></p>
+		<p>ADDRESS <input type="text" name="address"></p>
+				
+		<hr align="right" style="border : 1px solid blue; width:65%">
+		<input type="submit" value="Register"> 
+	</form>
+</div>
+
+
+</body>
+</html>
