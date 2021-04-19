@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/basic.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {	
+		refreshPage();
+		
+		// 미래에 만들어진! deleteCart를 컨트롤 하자
+		$('#content').on('click','#deleteCart',deleteCartStorage);
+		
+		
+		
+	}); 	
+	
+	function refreshPage(){
+		// for 문을 사용해서 localStoragee에 저장된 내용을 받아와서 tbody안에 적절한 위치에 출력
+		var html ="";
+		var totalPrice = 0;
+		
+		for (var key in localStorage){
+			if(key=='length') break;
+			
+			var data = localStorage.getItem(key).split(","); // aaa, bbb, 2500
+			
+			html += '<tr><td><img class=poster src='+data[1]+'></td><td>'+key
+			+'</td><td>'+data[0]+'</td><td>'+data[2]
+			+'</td><td><button id=deleteCart value='+key+'>삭제</button></td></tr>';
+			
+			totalPrice += parseInt(data[2]);
+			
+			
+			
+		} // for 문 끝		
+	$('#content').html(html);
+	$('#price').html("주문 가격 : "+totalPrice);
+		
+	}
+	
+	function deleteCartStorage() { //localStorage에 있는 key값을 삭제}
+		var key = $(this).val();
+	
+		var y = confirm(key+"(key) 값을 가진 영화의 목록을 삭제하시겠습니까?");
+		
+		if(y){
+			localStorage.removeItem(key);
+			refreshPage();
+			
+		}
+		
+	}
+	
+	
+		
+	
+	
+</script>
+<style type="text/css">
+.poster {
+ width : 150px;
+ height : 150px;
+}
+#content {
+text-align : center;
+
+}
+
+
+
+
+</style>
+</head>
+<body>
+	<article class="main">
+		<section>
+			<table width="80%" align="center">
+			<caption class="caption">찜 리스트</caption>
+			<thead>
+				<tr>
+					<th>이미지</th>
+					<th>상품번호(key)</th>
+					<th>상품이름</th>
+					<th>상품가격</th>
+					<th>삭제</th>
+				</tr>
+			</thead>
+			<tbody id="content">
+			
+			</tbody>
+			</table>
+		</section>	
+		<section class="totalprice" id="price">
+		
+		
+		</section>
+		
+		
+		<section class="link">
+			<table align="center">
+				<tr>
+					<td align="center"> 
+						<a href="#">주문하러 가기</a>
+						<a href="index.html">DVD 목록보기</a>			
+					</td>
+					
+				</tr>
+			
+			</table>
+		
+		</section>
+	
+	
+	
+	
+	
+	
+	</article>
+
+</body>
+</html>
