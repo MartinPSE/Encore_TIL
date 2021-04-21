@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Droppable - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/sunny/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+  	#clothing { margin-left : 5px; width:30%; float:left;}
+  	#cart{ margin-top: 15px; width:40%; float:left; padding:2em;}
+  	
+  	.ui-widget-header { margin : 5px;
+  						padding : 5px;
+  						}
+ 
+  
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+	  // 1. acordion적용
+	  $( "#catalog" ).accordion({
+		/* 컨텐츠에 맞게 어코디언 높이를 조절하는 옵션 */
+		heightStyle:'content'
+	
+	}); //accordion
+		$("#cart").accordion({
+			
+			heightStyle:'content'
+		});
+	  
+	// 2. draggable 적용
+	 $( "#catalog li" ).draggable({
+		 helper:'clone',
+		 appendTo:'#cart'
+		 
+	 }); // draggable
+	 
+	 // 3. droppable 적용
+	 $( "#cart ol" ).droppable({
+	      drop: function( event, ui ) { // ui 는 draagble 하고 있는 대상
+	      $(this).find('.placeholder').remove();
+	      	var uidrag=ui.draggable.text();
+	      // alert(uidrag)
+	      
+	      $(this).append('<li>'+uidrag+'</li>');
+	    	  
+	      }
+	    });
+	  		
+    
+  } ); //ready
+  </script>
+</head>
+<!-- div에다가  id를 draggable, droppable 
+	style은 "ui-widget-content",
+	"ui-widget-header" 로 style 주자
+-->
+<body>
+	<div id="clothing">
+	<h2  class="ui-widget-header">Catalogue</h2>
+	<!-- 드래그 하는 대상들 -->
+	<div id="catalog">
+		<h2><a href="#">상의류</a></h2>
+		<div>
+			<ul>
+				<li>셔츠</li>
+				<li>블라우스</li>
+				<li>니트</li>
+				<li>가디건</li>
+				<li>바바리코트</li>
+				<li>점퍼</li>
+			</ul>	
+		</div>
+		<h2><a href="#">하의류</a></h2>
+			<div>
+				<ul>
+					<li>정장바지</li>
+					<li>청바지</li>
+					<li>숏팬츠</li>
+					<li>칠부바지</li>
+				</ul>	
+			</div>
+		
+		<h2><a href="#">액세서리</a></h2>
+		<div>
+			<ul>
+				<li>시계</li>
+				<li>백팩</li>
+				<li>핸드백</li>
+				<li>지갑</li>
+			</ul>	
+		</div>
+	</div>
+	</div>
+	
+	<!--  drop할 영역을 지정... cart -->
+	<div id="cart">
+	<h2 class="ui-widget-header">Clothing Cart</h2>
+		<div>
+			<ol>
+				<li class="placeholder">Dropping Here</li>
+			</ol>		
+		</div>
+	</div>
+		
+	
+ 
+
+ 
+ 
+</body>
+</html>

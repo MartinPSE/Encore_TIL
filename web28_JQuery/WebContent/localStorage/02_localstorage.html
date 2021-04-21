@@ -16,9 +16,9 @@ var key, val, entries;
     		var vval = $('#v').val();
     		
     		localStorage.setItem(kval,vval);
-    		$('#k').val("");
-    		$('#v').val("");
-    		$('#k').focus();
+    		$('#k').val(""); // 있는 것들 지우고
+    		$('#v').val(""); 
+    		$('#k').focus(); // key값에 focus
     		
     		showAll();
     	}); // click
