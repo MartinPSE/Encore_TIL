@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     
 <!DOCTYPE html>
 <html>
@@ -47,20 +47,23 @@ img {
 	border-radius: 20px;
 	padding : 10px;
 }
-#todayImages{
-	margin-right: 100px;
-
-	}
+.parent{
+	padding : 5px;
+	display : flex;
+}
+.child {
+	flex : 1;
+}
 
 h2{
 color : purple;
 }
 figure.snip1283 {
-  float : right;
+
   color: #000000;
   position: relative;
   overflow: hidden;
-  margin: 10px;
+  margin: 0 auto;
   min-width: 150px;
   max-width: 200px;
   max-height: 150px;
@@ -142,10 +145,10 @@ figure.snip1283.hover figcaption {
 <div id="todayWatched">
 	<hr/>
 	<h2> 오늘 본 상품들 </h2>
-		<div id="todayImages">
+		<div class="parent">
 			<c:forEach items="${fruits}" var="fruit">
 				<figure class="snip1283">
-				<img src="${fruit}" id="todayImage">
+					<div class="child"><img src="${fruit}" id="todayImage"></div>
 				</figure>		
 			</c:forEach>
 		</div>
